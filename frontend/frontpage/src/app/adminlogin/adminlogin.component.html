@@ -1,0 +1,88 @@
+
+<!-- Navbar -->
+<header>
+  <nav>
+    <!-- nav Logo -->
+    <div class="logo">ADMIN DASHBOARD</div>
+    <!-- nav List -->
+    <ul class="navList">
+      <li class="navLi"><a routerLink="/adminlogin">Home</a></li>
+      <li class="navLi"><a routerLink="/addpackage">Add Package</a></li>
+      <li class="navLi"><a routerLink="/displayusers">User details</a></li>
+      <li class="navLi"><a routerLink="/allbookings">Bookings</a></li>
+      <li class="navLi"><a routerLink="/loginpage">logout</a></li>
+    </ul>
+    <!-- nav Button -->
+    <div class="navBtn ">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>     
+</header>  
+
+
+<!-- Visit https://nicolaskadis.info/posts/pure-css-flip-cards-using-bootstrap-4-and-css-grid-no-js for an explanation -->
+
+<div class="container" style="margin-left:120px;margin-top:-20px;">
+  <div class="table-wrapper">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2><b>Packages</b></h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="margin-left:120px;">
+      <div class="row" *ngFor="let dp of displaypackage" style="display:inline-block" >
+    
+    <div class="col-md-4 card-container"  >
+          <div class="card-flip" style="width: 250px; margin-right: 50px;">
+            <!-- Card 2 Front -->
+            <div class="card front" >
+              <img style="width: 228px;" src={{dp.url}} >
+              <div class="card-block">
+                
+                  <span style="font-weight: bolder;font-size:20px;">
+                      <span>{{dp.name}}</span>
+                    </span><br>
+                   Price : <span>{{dp.price}}</span><br>
+                   Rating : <span>{{dp.rating}}</span><br>
+                   <h6>Have a safe journey</h6>
+              </div>
+            </div>
+            <!-- End Card 2 Front -->
+    
+            <!-- Card 2 Back -->
+            <div class="card back">
+              <div class="card-header">
+                  <label>About : :</label>
+                  <span> {{dp.name}}</span>
+    
+              </div>
+              <div class="card-block">
+                
+                  <span>{{dp.about}}</span>
+                 
+              </div>
+            <div>
+    
+              <a routerLink="/edit/{{dp.id}}">
+                <button type="submit" class="btn btn-primary"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Edit</button>
+              </a>
+              <br>
+              <button type="submit" (click)="deletepack(dp.id)" class="btn btn-labeled btn-danger"><span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Delete</button>
+            </div>
+            </div>
+            <!-- End Card 2 Back -->
+          </div>
+        </div>
+    
+        
+       
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,79 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+
+  <div class="container">
+ 
+  </div>
+</nav>
+
+<div class="section-main">
+  <div class="container" role="main">
+    <div class="row">
+        <div class="col-xs-11 col-md-6">
+          <h2>For More Packages</h2>
+        </div>
+        <div class="col-xs-12 col-md-6">
+          <form action="" method="GET" class="form-main  form-inline nofloat-xs pull-right pull-left-sm">
+            <div class="form-group form-input-fields form-group-lg has-feedback">
+              <div class="input-group">
+                <input type="text" class="form-control input-search" [(ngModel)]="searchText" name="q" id="search" placeholder="Search for package">
+                <span class="input-group-addon group-icon"> <span class="glyphicon glyphicon-user"></span>
+                </span>     
+              </div>
+            </div>
+          </form>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<!-- Visit https://nicolaskadis.info/posts/pure-css-flip-cards-using-bootstrap-4-and-css-grid-no-js for an explanation -->
+<div class="container" >
+  <div class="row" *ngFor="let dp of displaypackage  | filter:searchText" style="display:inline-block" >
+
+
+    <!-- Card 2 -->
+    
+    <!-- End Card 2 -->
+<div class="col-md-4 card-container"  >
+      <div class="card-flip" style="width: 250px; margin-right: 50px;">
+        <!-- Card 2 Front -->
+        <div class="card front" >
+          <img style="width: 228px;" src={{dp.url}} >
+          <div class="card-block">
+            
+              <span style="font-weight: bolder;font-size:20px;">Package<br>
+                  <span>{{dp.name}}</span>
+                </span><br>
+               Price : <span>{{dp.price}}</span><br>
+               Rating : <span>{{dp.rating}}</span><br>
+               <h6>Have a safe journey</h6>
+          </div>
+        </div>
+        <!-- End Card 2 Front -->
+
+        <!-- Card 2 Back -->
+        <div class="card back">
+          <div class="card-header">
+              <label>About : :</label>
+              <span> {{dp.name}}</span>
+
+          </div>
+          <div class="card-block">
+            
+              <span>{{dp.about}}</span>
+              <br>
+            <a routerLink="/booking/{{dp.name}}" class="btn btn-primary">Book Now</a>
+          </div>
+        </div>
+        <!-- End Card 2 Back -->
+      </div>
+    </div>
+
+    
+   
+  </div>
+</div>

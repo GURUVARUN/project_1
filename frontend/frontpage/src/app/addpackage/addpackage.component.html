@@ -1,0 +1,77 @@
+<header>
+  <nav>
+    <!-- nav Logo -->
+    <div class="logo">ADMIN DASHBOARD</div>
+    <!-- nav List -->
+    <ul class="navList">
+      <li class="navLi"><a routerLink="/adminlogin">Home</a></li>
+      <li class="navLi"><a routerLink="/addpackage">Add Package</a></li>
+      <li class="navLi"><a routerLink="/displayusers">User details</a></li>
+      <li class="navLi"><a routerLink="/loginpage">logout</a></li>
+    </ul>
+    <!-- nav Button -->
+    <div class="navBtn ">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>     
+</header>  
+      
+      
+      
+      
+      <!-- Add Package  -->
+    
+
+
+      
+  <div class="container" style="margin-left:120px;margin-top:-20px;">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Add <b>Packages</b></h2>
+          </div>
+
+        </div>
+      </div>
+      <div class="panel panel-primary">
+        <div class="panel-body">
+
+          <!-- Add packages -->
+          <form #Addpack="ngForm" (ngSubmit)="Addpackage(Addpack.value)">
+            <div class="form-group">
+              <label>Enter Url</label>
+              <input class="form-control" id="city" type="text" name="url" ngModel>
+            </div>
+            <div class="form-group">
+              <label>Enter City Name</label>
+              <input class="form-control" id="city" type="text" name="name" ngModel>
+            </div>
+            <div class="form-group">
+              <label>Enter Price</label>
+              <input class="form-control" id="price" type="text" name="price" ngModel>
+            </div>
+            <div class="form-group">
+              <label >Rating</label>
+              <input class="form-control" id="rating" type="text" name="rating" ngModel>
+            </div>
+            <div class="form-group">
+              <label>About</label>
+              <textarea name="paragraph_text" cols="50" rows="10" name="about" ngModel></textarea>
+              
+            </div>
+            <button class="btn btn-primary" id="add-employee-btn" type="submit">Add</button>
+          </form>
+
+        </div>
+
+      </div>
+
+
+
+
+
+    </div>
+  </div>

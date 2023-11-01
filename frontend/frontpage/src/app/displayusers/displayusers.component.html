@@ -1,0 +1,69 @@
+<header>
+    <nav>
+      <!-- nav Logo -->
+      <div class="logo">ADMIN DASHBOARD</div>
+      <!-- nav List -->
+      <ul class="navList">
+        <li class="navLi"><a routerLink="/adminlogin">Home</a></li>
+        <li class="navLi"><a routerLink="/addpackage">Add Package</a></li>
+        <li class="navLi"><a routerLink="/displayusers">User details</a></li>
+        <li class="navLi"><a routerLink="/allbookings">Bookings</a></li>
+        <li class="navLi"><a routerLink="/loginpage">logout</a></li>
+      </ul>
+      <!-- nav Button -->
+      <div class="navBtn ">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>     
+  </header>  
+
+
+
+
+  
+
+  <div class="container" style="margin-left:120px;margin-top:-20px;">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Manage <b>Users</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a routerLink="/addusers" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+          </div>
+        </div>
+      </div>
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr >
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let alusers of result">
+            <td>{{alusers.id}}</td>
+            <td>{{alusers.userName}}</td>
+            <td>{{alusers.emailId}}</td>
+            <td>{{alusers.password}}</td>
+            <td> <button type="button" (click)="deleteuser(alusers.id)" class="btn btn-labeled btn-danger">
+                <span class="btn-label"><i class="glyphicon glyphicon-remove"></i></span>Delete</button></td>
+         
+          </tr>
+          <tr>
+
+            
+ 
+ 
+
+        
+        </tbody>
+      </table>
+    </div>
+  </div>

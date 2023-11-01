@@ -1,0 +1,7 @@
+<form class="login" #adminlogin="ngForm" >
+    <h2>Welcome, Admin!</h2>
+    <p>Please log in</p>
+    <input type="text" placeholder="User Name" name="email" [(ngModel)]="admin.email"/>
+    <input type="password" placeholder="Password" name="password" [(ngModel)]="admin.password" />
+    <input   type="submit" (click)="Adminuser()" value="Log In" />
+  </form>

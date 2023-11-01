@@ -1,0 +1,22 @@
+
+body {
+  height: 100%;
+}
+.bs-fullscreen {
+  height: 100%;
+}
+.bs-fullscreen .carousel,
+.bs-fullscreen .item,
+.bs-fullscreen .active {
+  height: 100%;
+}
+.bs-fullscreen .carousel-inner {
+  height: 100%;
+}
+
+.carousel-bg .carousel-inner .item {
+  background-color: darkslategrey;
+  background-size: cover;
+  background-position: center;
+  min-height: 647px;
+}

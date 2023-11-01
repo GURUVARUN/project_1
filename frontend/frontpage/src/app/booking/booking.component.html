@@ -1,0 +1,88 @@
+<!-- 
+<body>
+  <h1>Booking Online Now</h1>
+  <p>Please fill out this form with the required information</p>
+  <form #booke="ngForm" (ngSubmit)="Bookings()">
+    
+    <fieldset>
+      <label style="color: yellow;">Enter Full Name 
+        <input type="text"  name="name" [(ngModel)]="book.name" required />
+    </label>
+
+      <label style="color: yellow;">Email
+      <input type="email" name="email" [(ngModel)]="book.email" required />
+      </label>
+      <label style="color: yellow;">Phone Number 
+      <input type="text" name="phone" name="mobilenumber" [(ngModel)]="book.mobilenumber" required />
+      </label>
+      <label style="color: yellow;">No of Days
+        <input type="text" name="days" [(ngModel)]="book.days" required />
+        </label>
+      
+      <label style="color: yellow;">Starting Date
+      <input type="date" name="bookingDate" [(ngModel)]="book.bookingDate" required />
+      </label>
+
+      <label style="color: yellow;">Number of Members 
+        <input type="number" name="noOfPeople" [(ngModel)]="book.noOfPeople" min="1" max="120" class="room"/>
+      </label>
+
+       </fieldset>
+    <input type="submit" value="Confirm Booking" />
+  </form>
+</body>
+
+ -->
+
+ <div class="bs-fullscreen">
+    <div id="carousel-example" class="carousel slide carousel-bg" data-ride="carousel" data-interval="3000">
+       <!-- Bottom dots {indicators} -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
+      </ol>
+      
+      <div class="carousel-inner"  role="listbox">
+        <div class="item active" style="background-image: url('https://www.thephotoargus.com/wp-content/uploads/2019/04/black-and-white-lightroom-presets-040.jpg');">
+            
+                <h1>Booking Online Now</h1>
+                <p>Please fill out this form with the required information</p>
+                
+                <form #booke="ngForm"  (ngSubmit)="Bookings()">
+                  
+                  <fieldset>
+                    <label style="color: yellow;">Pack Name 
+                      <input type="text" name="packname" [(ngModel)]="this.name" class="room"/>
+                    </label>
+
+                    <label style="color: yellow;">Enter Full Name 
+                      <input type="text" name="name" [(ngModel)]="book.name" required />
+                  </label>
+              
+                    <label style="color: yellow;">Email
+                    <input type="email" name="email" [(ngModel)]="book.email" required />
+                    </label>
+                    <label style="color: yellow;">Phone Number 
+                    <input type="text" name="phone" name="mobilenumber" [(ngModel)]="book.mobilenumber" required />
+                    </label>
+                    <label style="color: yellow;">No of Days
+                      <input type="text" name="days" [(ngModel)]="book.days" required />
+                      </label>
+                    
+                    <label style="color: yellow;">Starting Date
+                    <input type="date" name="bookingDate" [(ngModel)]="book.bookingDate" required />
+                    </label>
+              
+                    <label style="color: yellow;">Number of Members 
+                      <input type="number" name="noOfPeople" [(ngModel)]="book.noOfPeople" min="1" max="120" class="room"/>
+                    </label>
+              
+                     </fieldset>
+                  <input style="color: yellow;" type="submit" value="Confirm Booking" />
+                </form>
+                </div>
+        </div>
+      </div>
+      
+
+
+</div>

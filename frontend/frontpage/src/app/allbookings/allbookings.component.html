@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- nav -->
+<!-- Navbar -->
+<header>
+    <nav>
+      <!-- nav Logo -->
+      <div class="logo">ADMIN DASHBOARD</div>
+      <!-- nav List -->
+      <ul class="navList">
+        <li class="navLi"><a routerLink="/adminlogin">Home</a></li>
+        <li class="navLi"><a routerLink="/addpackage">Add Package</a></li>
+        <li class="navLi"><a routerLink="/displayusers">User details</a></li>
+        <li class="navLi"><a routerLink="/allbookings">Bookings</a></li>
+        <li class="navLi"><a routerLink="/loginpage">logout</a></li>
+      </ul>
+      <!-- nav Button -->
+      <div class="navBtn ">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>     
+  </header>  
+
+
+<!-- nav end -->
+
+
+
+<div class="container">
+<div class="table-responsive">
+<table class="table table-bordered   table-striped" style="margin-top:10px">
+  <thead class="table__head">
+    <tr class="winner__table">
+        <th><i  aria-hidden="true"></i>Id</th>
+        <th><i  aria-hidden="true"></i>Package</th>
+      <th><i  aria-hidden="true"></i>Name</th>
+      <th><i  aria-hidden="true"></i>Email</th>
+      <th><i  aria-hidden="true"></i> Mobile-Number</th>
+      <th> <i  aria-hidden="true"></i> Days</th>
+      <th><i  aria-hidden="true"></i> BOOKING-DATE</th>
+      <th><i  aria-hidden="true"></i> Number-of-people</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let albookings of data">
+      <td>{{albookings.id}}</td>
+      <td>{{albookings.packName}}</td>
+      <td>{{albookings.name}}</td>
+      <td>{{albookings.email}}</td>
+      <td>{{albookings.mobilenumber}}</td>
+      <td>{{albookings.days}}</td>
+      <td>{{albookings.bookingDate}}</td>
+      <td>{{albookings.noOfPeople}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>

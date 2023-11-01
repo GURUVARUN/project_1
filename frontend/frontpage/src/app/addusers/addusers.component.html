@@ -1,0 +1,92 @@
+<header>
+    <nav>
+      <!-- nav Logo -->
+      <div class="logo">ADMIN DASHBOARD</div>
+      <!-- nav List -->
+      <ul class="navList">
+        <li class="navLi"><a routerLink="/adminlogin">Home</a></li>
+        <li class="navLi"><a routerLink="/addpackage">Add Package</a></li>
+        <li class="navLi"><a routerLink="/displayusers">User details</a></li>
+        <li class="navLi"><a routerLink="/loginpage">logout</a></li>
+      </ul>
+      <!-- nav Button -->
+      <div class="navBtn ">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>     
+  </header>  
+
+
+
+
+
+
+
+
+ <div class="container" style="margin-left:120px;margin-top:-20px;">
+    <div class="table-wrapper">
+      <div class="table-title">
+        <div class="row">
+          <div class="col-sm-6">
+            <h2>Add <b>Users</b></h2>
+          </div>
+          <div class="col-sm-6">
+            <a routerLink="/addusers" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-60 col-sm-12" style="width:30%;margin-left:400px;">
+        <div class="login-form">
+           <form #Registerform="ngForm" (ngSubmit)="registerUser()">
+              <!-- <small [class.text-danger]="msg.status == 500">{{msg.message}}</small> -->
+            <div class="form-group">
+              <label>E-mail</label>
+              <input type="text" style="min-height:40px;" class="form-control" placeholder="Enter mail" name="E-mail" [(ngModel)]="user.emailId" required  pattern="^\w+@[a-zA-Z_]+?|.[a-zA-Z]{2,3}$"
+               #email="ngModel"
+              
+               [class.is-invalid]="email.invalid && email.touched"
+               
+              >
+             
+              <!-- <small class="text-danger" [class.d-none]="email.valid || email.untouched">Enter your Mail Id</small> -->
+           <div *ngIf="email.errors && (email.invalid && email.touched)">
+              <small class="text-danger" *ngIf="email.errors?.['required']">email field is required </small>
+              <small class="text-danger" *ngIf="email.errors?.['pattern']">Enter a valid email</small>
+           </div>
+        </div>
+    
+              <div class="form-group">
+                 <label>User Name</label>
+                 <input type="text" style="min-height:40px;" class="form-control" placeholder="User Name" name="username" [(ngModel)]="user.userName" #username="ngModel" required
+                 [class.is-invalid]="username.invalid && username.touched"
+                 
+                 >
+                 <small class="text-danger" [class.d-none]="username.valid || username.untouched">user name is required</small>
+              </div>
+    
+              <div class="form-group">
+                 <label>Password</label>
+                 <input type="password" style="min-height:40px;" class="form-control" placeholder="Password" name="password" [(ngModel)]="user.password" required #password="ngModel"
+                 [class.is-invalid]="password.invalid && password.touched">
+                 <small class="text-danger" [class.d-none]="password.valid || password.untouched">Enter your Password</small>
+             
+              </div>
+    
+    
+              <div class="form-group">
+                 <label>Confirm Password</label>
+                 <input type="password"  style="min-height:40px;" class="form-control" placeholder="Password" name="cpassword" #cpassword="ngModel" (ngModel)="user.password" required 
+                 [class.is-invalid]="cpassword.invalid && cpassword.touched">
+                 <small class="text-danger" [class.d-none]="(cpassword.valid==password.untouched)|| cpassword.untouched">Password & ConfirmPassword should be same</small>
+             
+              </div>
+    
+              <button [disabled]="Registerform.form.invalid" style="min-height:40px;" type="submit"   class="btn btn-black">Add User</button>
+             </form>
+    
+        </div>
+     </div>
+    </div>
+  </div>
